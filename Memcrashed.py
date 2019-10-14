@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import sys, os, time
 from pathlib import Path
-from scapy.all import *
+from kamene.all import *
 from contextlib import contextmanager
 
 starttime=time.time()
